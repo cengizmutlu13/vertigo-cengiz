@@ -81,3 +81,31 @@ The sale only increases purchase conversion for a limited period and creates a s
 The new user source, however, increases the number of active players entering the game every day. Because both ad revenue and IAP revenue scale with the active user base, the effect compounds over time and continues beyond the 30-day horizon.
 
 Therefore, the permanent acquisition source provides sustainable growth, while the sale provides only temporary monetization uplift.
+
+
+
+TASK 2
+
+### Data quality checks
+- I started by validating the dataset: overall coverage (row/user counts and date ranges)
+
+### Overall trends (DAU, revenue, sessions)
+I analyzed daily DAU and revenue (total, IAP, ads) to understand overall game health and volatility. I also tracked session behavior over time (sessions per user-day, session duration, and duration per session) to see whether engagement grows or declines as the product matures.
+
+### Cohort retention (D1/D3/D7)
+I built install cohorts using install_date and measured retention as the share of users who were active (total_session_count > 0) on day-since-install 1, 3, and 7. This highlights whether the game is primarily losing players immediately (onboarding issue) or later (mid-game retention issue).
+
+### First-day engagement features
+To support segmentation, I created per-user first-day (D0) engagement features such as total sessions, total session duration, and match activity (starts/ends, win/loss counts). These features help explain differences in retention and monetization later in the lifecycle.
+
+### User segmentation (based on first-day sessions)
+I segmented users into Low/Mid/High engagement groups based on first-day session counts using NTILE(3). This creates simple, interpretable segments that I can compare on retention and revenue outcomes.
+
+### Segment outcomes (retention and revenue)
+After defining first-day engagement segments, I compared their D7 retention and 7-day ARPU. This shows whether early engagement is predictive of longer-term value and helps identify which cohorts to prioritize (e.g., onboarding improvements for Low segment or UA targeting for High segment).
+
+### Monetization diagnostics
+I tracked payer rate, ARPU, and ARPPU over time to understand whether revenue changes are driven by more payers, higher spend per payer, or ads. I also separated ARPU into ad ARPU and IAP ARPU to see which monetization stream is dominant.
+
+### Platform and country insights
+I analyzed revenue concentration by platform and country to identify the highest-value markets. This helps prioritize localization, UA targeting, and product optimization efforts (e.g., focusing on markets with high payer_rate or high ARPU).
