@@ -1,0 +1,30 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red238\green240\blue241;\red120\green162\blue246;\red0\green0\blue0;
+\red255\green255\blue255;\red226\green229\blue232;}
+{\*\expandedcolortbl;;\cssrgb\c94510\c95294\c95686;\cssrgb\c54118\c70588\c97255;\cssrgb\c0\c0\c0;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c90980\c91765\c92941;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf3 \cb4 \strokec3 SELECT\cf2 \cb1 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb4   \cf5 \strokec5 user_id\cf2 \strokec2 ,\cb1 \
+\cb4   \cf5 \strokec5 install_date\cf2 \strokec2 ,\cb1 \
+\cb4   \cf5 \strokec5 platform\cf2 \strokec2 ,\cb1 \
+\cb4   \cf5 \strokec5 country\cf2 \strokec2 ,\cb1 \
+\cb4   \cf3 \strokec3 SUM\cf6 \strokec6 (\cf5 \strokec5 total_session_count\cf6 \strokec6 )\cf2 \strokec2  \cf3 \strokec3 AS\cf2 \strokec2  \cf5 \strokec5 d0_sessions\cf2 \strokec2 ,\cb1 \
+\cb4   \cf3 \strokec3 SUM\cf6 \strokec6 (\cf5 \strokec5 total_session_duration\cf6 \strokec6 )\cf2 \strokec2  \cf3 \strokec3 AS\cf2 \strokec2  \cf5 \strokec5 d0_duration\cf2 \strokec2 ,\cb1 \
+\cb4   \cf3 \strokec3 SUM\cf6 \strokec6 (\cf5 \strokec5 match_start_count\cf6 \strokec6 )\cf2 \strokec2  \cf3 \strokec3 AS\cf2 \strokec2  \cf5 \strokec5 d0_match_starts\cf2 \strokec2 ,\cb1 \
+\cb4   \cf3 \strokec3 SUM\cf6 \strokec6 (\cf5 \strokec5 match_end_count\cf6 \strokec6 )\cf2 \strokec2  \cf3 \strokec3 AS\cf2 \strokec2  \cf5 \strokec5 d0_match_ends\cf2 \strokec2 ,\cb1 \
+\cb4   \cf3 \strokec3 SUM\cf6 \strokec6 (\cf5 \strokec5 victory_count\cf6 \strokec6 )\cf2 \strokec2  \cf3 \strokec3 AS\cf2 \strokec2  \cf5 \strokec5 d0_victories\cf2 \strokec2 ,\cb1 \
+\cb4   \cf3 \strokec3 SUM\cf6 \strokec6 (\cf5 \strokec5 defeat_count\cf6 \strokec6 )\cf2 \strokec2  \cf3 \strokec3 AS\cf2 \strokec2  \cf5 \strokec5 d0_defeats\cf2 \cb1 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf3 \cb4 \strokec3 FROM\cf2 \strokec2  \cf5 \strokec5 `cengiz-487209.cengiz_vertigo.customers`\cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 WHERE\cf2 \strokec2  \cf5 \strokec5 event_date\cf2 \strokec2  = \cf5 \strokec5 install_date\cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 GROUP\cf2 \strokec2  \cf3 \strokec3 BY\cf2 \strokec2  \cf5 \strokec5 user_id\cf2 \strokec2 , \cf5 \strokec5 install_date\cf2 \strokec2 , \cf5 \strokec5 platform\cf2 \strokec2 , \cf5 \strokec5 country\cf2 \cb1 \strokec2 \
+}

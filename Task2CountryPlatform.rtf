@@ -1,0 +1,28 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red238\green240\blue241;\red120\green162\blue246;\red0\green0\blue0;
+\red255\green255\blue255;\red226\green229\blue232;\red246\green124\blue48;}
+{\*\expandedcolortbl;;\cssrgb\c94510\c95294\c95686;\cssrgb\c54118\c70588\c97255;\cssrgb\c0\c0\c0;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c90980\c91765\c92941;\cssrgb\c98039\c56471\c24314;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf3 \cb4 \strokec3 SELECT\cf2 \cb1 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb4   \cf5 \strokec5 platform\cf2 \strokec2 ,\cb1 \
+\cb4   \cf5 \strokec5 country\cf2 \strokec2 ,\cb1 \
+\cb4   \cf3 \strokec3 COUNT\cf6 \strokec6 (\cf3 \strokec3 DISTINCT\cf2 \strokec2  \cf5 \strokec5 user_id\cf6 \strokec6 )\cf2 \strokec2  \cf3 \strokec3 AS\cf2 \strokec2  \cf5 \strokec5 users\cf2 \strokec2 ,\cb1 \
+\cb4   \cf3 \strokec3 SUM\cf6 \strokec6 (\cf5 \strokec5 iap_revenue\cf2 \strokec2  \cf6 \strokec6 +\cf2 \strokec2  \cf5 \strokec5 ad_revenue\cf6 \strokec6 )\cf2 \strokec2  \cf3 \strokec3 AS\cf2 \strokec2  \cf5 \strokec5 total_rev\cf2 \strokec2 ,\cb1 \
+\cb4   \cf3 \strokec3 SAFE_DIVIDE\cf6 \strokec6 (\cf3 \strokec3 SUM\cf6 \strokec6 (\cf5 \strokec5 iap_revenue\cf2 \strokec2  \cf6 \strokec6 +\cf2 \strokec2  \cf5 \strokec5 ad_revenue\cf6 \strokec6 )\cf2 \strokec2 , \cf3 \strokec3 COUNT\cf6 \strokec6 (\cf3 \strokec3 DISTINCT\cf2 \strokec2  \cf5 \strokec5 user_id\cf6 \strokec6 ))\cf2 \strokec2  \cf3 \strokec3 AS\cf2 \strokec2  \cf5 \strokec5 arpu\cf2 \strokec2 ,\cb1 \
+\cb4   \cf3 \strokec3 SAFE_DIVIDE\cf6 \strokec6 (\cf3 \strokec3 SUM\cf6 \strokec6 (\cf5 \strokec5 iap_revenue\cf6 \strokec6 )\cf2 \strokec2 , \cf3 \strokec3 NULLIF\cf6 \strokec6 (\cf3 \strokec3 COUNT\cf6 \strokec6 (\cf3 \strokec3 DISTINCT\cf2 \strokec2  \cf3 \strokec3 IF\cf6 \strokec6 (\cf5 \strokec5 iap_revenue\cf2 \strokec2  \cf6 \strokec6 >\cf2 \strokec2  \cf7 \strokec7 0\cf2 \strokec2 , \cf5 \strokec5 user_id\cf2 \strokec2 , \cf3 \strokec3 NULL\cf6 \strokec6 ))\cf2 \strokec2 , \cf7 \strokec7 0\cf6 \strokec6 ))\cf2 \strokec2  \cf3 \strokec3 AS\cf2 \strokec2  \cf5 \strokec5 arppu\cf2 \strokec2 ,\cb1 \
+\cb4   \cf3 \strokec3 SAFE_DIVIDE\cf6 \strokec6 (\cf3 \strokec3 COUNT\cf6 \strokec6 (\cf3 \strokec3 DISTINCT\cf2 \strokec2  \cf3 \strokec3 IF\cf6 \strokec6 (\cf5 \strokec5 iap_revenue\cf2 \strokec2  \cf6 \strokec6 >\cf2 \strokec2  \cf7 \strokec7 0\cf2 \strokec2 , \cf5 \strokec5 user_id\cf2 \strokec2 , \cf3 \strokec3 NULL\cf6 \strokec6 ))\cf2 \strokec2 , \cf3 \strokec3 COUNT\cf6 \strokec6 (\cf3 \strokec3 DISTINCT\cf2 \strokec2  \cf5 \strokec5 user_id\cf6 \strokec6 ))\cf2 \strokec2  \cf3 \strokec3 AS\cf2 \strokec2  \cf5 \strokec5 payer_rate\cf2 \cb1 \strokec2 \
+\pard\pardeftab720\partightenfactor0
+\cf3 \cb4 \strokec3 FROM\cf2 \strokec2  \cf5 \strokec5 `cengiz-487209.cengiz_vertigo.customers`\cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 GROUP\cf2 \strokec2  \cf3 \strokec3 BY\cf2 \strokec2  \cf5 \strokec5 platform\cf2 \strokec2 , \cf5 \strokec5 country\cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 ORDER\cf2 \strokec2  \cf3 \strokec3 BY\cf2 \strokec2  \cf5 \strokec5 total_rev\cf2 \strokec2  \cf3 \strokec3 DESC\cf2 \cb1 \strokec2 \
+\cf3 \cb4 \strokec3 LIMIT\cf2 \strokec2  \cf7 \strokec7 20\cf2 \cb1 \strokec2 \
+}
